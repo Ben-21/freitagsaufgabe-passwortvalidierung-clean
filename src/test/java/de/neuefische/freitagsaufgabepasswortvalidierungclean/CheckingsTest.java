@@ -27,7 +27,7 @@ class CheckingsTest {
     @Test
     void testIfNumbersAreIncluded() {
         //GIVEN
-        Password password = new Password("thisismypassword");
+        Password password = new Password("thisis1mypassword");
         Checkings checkings = new Checkings();
         boolean expected = true;
 
