@@ -12,7 +12,6 @@ class CheckingsTest {
         Password password = new Password("thisismypassword");
         Checkings checkings = new Checkings();
         int expected = 16;
-
         //WHEN
         int actualLength = checkings.checkPasswordLength(password);
 
