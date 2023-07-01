@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
     void testPasswordLength(){
         //GIVEN
         Password password = new Password("thisismypassword");
-        Methods methods = new Methods();
+        Checkings methods = new Checkings();
         int expected = 13;
 
 

@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class Methods {
+public class Checkings {
 
 
     public int checkPasswordLength(Password password) {
