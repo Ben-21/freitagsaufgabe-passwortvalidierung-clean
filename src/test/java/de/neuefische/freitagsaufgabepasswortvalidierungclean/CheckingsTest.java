@@ -23,4 +23,20 @@ class CheckingsTest {
 
     }
 
+
+    @Test
+    void testIfNumbersAreIncluded() {
+        //GIVEN
+        Password password = new Password("thisismypassword");
+        Checkings checkings = new Checkings();
+        boolean expected = true;
+
+        //WHEN
+        boolean actual = checkings.checkIfNumbersAreIncluded(password);
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+
+    }
+
 }
