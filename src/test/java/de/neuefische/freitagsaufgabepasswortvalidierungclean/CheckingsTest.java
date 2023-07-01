@@ -7,7 +7,7 @@ class CheckingsTest {
 
 
     @Test
-    void testPasswordLength() {
+    void returnLength_whenTestPasswordLength() {
         //GIVEN
         Password password = new Password("thisismypassword");
         Checkings checkings = new Checkings();
@@ -20,34 +20,31 @@ class CheckingsTest {
 
         //THEN
         Assertions.assertEquals(expected, actualLength);
-
     }
 
-
     @Test
-    void testIfNumbersAreIncluded() {
+    void returnTrue_whenTestIfNumbersAreIncluded() {
         //GIVEN
         Password password = new Password("thisis1mypassword");
         Checkings checkings = new Checkings();
         boolean expected = true;
 
+
         //WHEN
         boolean actual = checkings.checkIfNumbersAreIncluded(password);
 
+
         //THEN
         Assertions.assertEquals(expected, actual);
-
     }
 
-
-
-
     @Test
-    void testIfCapitalLettersAreIncluded() {
+    void returnTrue_whenTestIfCapitalLettersAreIncluded() {
         //GIVEN
         Password password = new Password("thisisFypassword");
         Checkings checkings = new Checkings();
         boolean expected = true;
+
 
         //WHEN
         boolean actual = checkings.checkIfCapitalLettersAreIncluded(password);
@@ -55,7 +52,6 @@ class CheckingsTest {
 
         //THEN
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -65,15 +61,14 @@ class CheckingsTest {
         Checkings checkings = new Checkings();
         boolean expected = false;
 
+
         //WHEN
         boolean actual = checkings.checkIfCapitalLettersAreIncluded(password);
 
 
         //THEN
         Assertions.assertEquals(expected, actual);
-
     }
-
 }
 
 
