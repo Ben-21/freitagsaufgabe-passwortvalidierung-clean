@@ -1,17 +1,19 @@
 package de.neuefische.freitagsaufgabepasswortvalidierungclean;
 
 
+
 import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+
 
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class Password {
 
 
-    private String passwordToCheck;
+    private String word;
 
 
 }
