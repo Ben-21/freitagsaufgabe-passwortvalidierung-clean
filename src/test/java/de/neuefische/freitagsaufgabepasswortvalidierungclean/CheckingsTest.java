@@ -23,4 +23,19 @@ class CheckingsTest {
 
     }
 
+
+    @Test
+    void testIfCapitalLettersAreIncluded() {
+        //GIVEN
+        Password password = new Password("thisismypassword");
+        Checkings checkings = new Checkings();
+        boolean expected = false;
+
+        //WHEN
+        boolean actual = checkings.checkIfCapitalLettersAreIncluded(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+
 }
