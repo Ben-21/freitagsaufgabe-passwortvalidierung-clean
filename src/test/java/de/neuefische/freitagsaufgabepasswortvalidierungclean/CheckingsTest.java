@@ -13,10 +13,8 @@ class CheckingsTest {
         Checkings checkings = new Checkings();
         int expected = 16;
 
-
         //WHEN
         int actualLength = checkings.checkPasswordLength(password);
-
 
         //THEN
         Assertions.assertEquals(expected, actualLength);
