@@ -11,12 +11,12 @@ import org.junit.jupiter.api.Test;
     void testPasswordLength(){
         //GIVEN
         Password password = new Password("thisismypassword");
-        Checkings methods = new Checkings();
-        int expected = 13;
+        Checkings checkings = new Checkings();
+        int expected = 16;
 
 
         //WHEN
-        int actualLength = methods.checkPasswordLength(password);
+        int actualLength = checkings.checkPasswordLength(password);
 
         //THEN
         Assertions.assertEquals(expected, actualLength);
