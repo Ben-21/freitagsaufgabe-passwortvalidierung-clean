@@ -23,4 +23,37 @@ class CheckingsTest {
 
     }
 
+
+    @Test
+    void testIfCapitalLettersAreIncluded() {
+        //GIVEN
+        Password password = new Password("thisisFypassword");
+        Checkings checkings = new Checkings();
+        boolean expected = true;
+
+        //WHEN
+        boolean actual = checkings.checkIfCapitalLettersAreIncluded(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void returnFalse_whenTestIfCapitalLettersAreIncluded() {
+        //GIVEN
+        Password password = new Password("thisisypassword");
+        Checkings checkings = new Checkings();
+        boolean expected = false;
+
+        //WHEN
+        boolean actual = checkings.checkIfCapitalLettersAreIncluded(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+
+    }
+
 }
