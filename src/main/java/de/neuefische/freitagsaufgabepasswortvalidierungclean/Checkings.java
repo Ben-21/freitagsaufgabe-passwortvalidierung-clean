@@ -37,19 +37,15 @@ public class Checkings {
 
     public boolean checkIfPasswordIsGood(Password password) {
 
-        if (password == null || password.toString().isEmpty()) {
+        if (password == null || password.getWord() == null || password.getWord().isEmpty()) {
             return false;
         }
 
-        switch (password.getWord()) {
-
-            case "1234567890", "football", "abcdefg", "qwerty123", "letmein", "admin", "iloveyou", "welcome", "password123", "123abc", "sunshine":
-                return false;
-
-            default:
-                return true;
-
-        }
+        return switch (password.getWord()) {
+            case "1234567890", "football", "abcdefg", "qwerty123", "letmein", "admin", "iloveyou", "welcome", "password123", "123abc", "sunshine" ->
+                    false;
+            default -> true;
+        };
 
 
     }
