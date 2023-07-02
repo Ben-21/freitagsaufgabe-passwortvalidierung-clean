@@ -22,4 +22,16 @@ public class Checkings {
         }
         return false;
     }
+
+    public boolean checkIfLowerCaseLettersAreIncluded(Password password) {
+
+        String word = password.getWord();
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.isLowerCase(word.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+
+    }
 }
