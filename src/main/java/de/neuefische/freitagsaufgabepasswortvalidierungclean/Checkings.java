@@ -34,4 +34,23 @@ public class Checkings {
         return false;
 
     }
+
+    public boolean checkIfPasswordIsGood(Password password) {
+
+        if (password == null || password.toString().isEmpty()) {
+            return false;
+        }
+
+        switch (password.getWord()) {
+
+            case "1234567890", "football", "abcdefg", "qwerty123", "letmein", "admin", "iloveyou", "welcome", "password123", "123abc", "sunshine":
+                return false;
+
+            default:
+                return true;
+
+        }
+
+
+    }
 }
