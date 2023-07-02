@@ -103,9 +103,25 @@ class CheckingsTest {
     }
 
     @Test
-    void returnFalse_whenTestIfPasswordIsGood() {
+    void returnTrue_whenTestIfPasswordIsGood() {
         //GIVEN
         Password password = new Password("thisisypassword");
+        Checkings checkings = new Checkings();
+        boolean expected = true;
+
+
+        //WHEN
+        boolean actual = checkings.checkIfPasswordIsGood(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void returnFalse_whenTestIfPasswordIsGood() {
+        //GIVEN
+        Password password = new Password("qwerty123");
         Checkings checkings = new Checkings();
         boolean expected = false;
 
@@ -116,6 +132,7 @@ class CheckingsTest {
 
         //THEN
         Assertions.assertEquals(expected, actual);
+    }
 }
 
 
