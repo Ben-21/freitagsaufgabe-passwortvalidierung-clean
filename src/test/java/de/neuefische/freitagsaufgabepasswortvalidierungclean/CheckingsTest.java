@@ -69,6 +69,21 @@ class CheckingsTest {
         //THEN
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void returnTrue_whenTestIfLowerCaseLettersAreIncluded() {
+        //GIVEN
+        Password password = new Password("thisisFypassword");
+        Checkings checkings = new Checkings();
+        boolean expected = true;
+
+        //WHEN
+        boolean actual = checkings.checkIfLowerCaseLettersAreIncluded(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+    }
 }
 
 
