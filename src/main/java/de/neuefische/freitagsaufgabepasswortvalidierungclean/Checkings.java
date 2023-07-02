@@ -37,7 +37,7 @@ public class Checkings {
 
     public boolean checkIfPasswordIsGood(Password password) {
 
-        if (password == null || password.getWord() == null || password.getWord().isEmpty()) {
+        if (password.getWord() == null || password.getWord().isEmpty()) {
             return false;
         }
 
