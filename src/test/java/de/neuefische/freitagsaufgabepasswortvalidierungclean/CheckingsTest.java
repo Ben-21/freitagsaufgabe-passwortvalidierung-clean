@@ -103,7 +103,7 @@ class CheckingsTest {
     }
 
     @Test
-    void returnFalse_whenTestIfPasswordIsBad() {
+    void returnFalse_whenTestIfPasswordIsGood() {
         //GIVEN
         Password password = new Password("thisisypassword");
         Checkings checkings = new Checkings();
