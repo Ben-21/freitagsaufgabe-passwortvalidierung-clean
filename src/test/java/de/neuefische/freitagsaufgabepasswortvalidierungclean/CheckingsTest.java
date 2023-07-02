@@ -2,6 +2,9 @@ package de.neuefische.freitagsaufgabepasswortvalidierungclean;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class CheckingsTest {
 
@@ -101,6 +104,42 @@ class CheckingsTest {
         //THEN
         Assertions.assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @NullAndEmptySource
+    @ValueSource(strings = {"admin", "qwerty123", "football", "abcdefg", "letmein", "iloveyou", "welcome", "password123", "123abc", "sunshine",})
+    void returnFalse_whenTestIfPasswordIsGood(String str) {
+        //GIVEN
+        Password password = new Password(str);
+        Checkings checkings = new Checkings();
+        boolean expected = false;
+
+
+        //WHEN
+        boolean actual = checkings.checkIfPasswordIsGood(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"asdkleu", "022dfssdf", "!dfgerg§$%fgfgh56"})
+    void returnTrue_whenTestIfPasswordIsGood(String str) {
+        //GIVEN
+        Password password = new Password(str);
+        Checkings checkings = new Checkings();
+        boolean expected = true;
+
+
+        //WHEN
+        boolean actual = checkings.checkIfPasswordIsGood(password);
+
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
 
 
